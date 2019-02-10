@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Managify.Models.RegisteredEvent>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Summary of your Registrations</h2>
+
+<p>
+    @Html.ActionLink("See All Registrations", "List")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Fees)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Fees)
+        </td>
+        <td>
+            @Html.ActionLink("Remove", "Remove", new { userId = item.UserAccountId, eventId = item.EventId })
+        </td>
+    </tr>
+}
+
+</table>

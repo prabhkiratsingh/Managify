@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div class="row" style="margin-top: 0px">
+    <div class="col-md-6">
+        <div class="blog-card spring-fever">
+            <div class="title-content">
+                <h3><a href="@Url.Action("About", "Home")">Managify</a></h3>
+                <div class="intro"> <a href="#">Manage your events with just few clicks</a> </div>
+            </div>
+
+            <div class="card-info">
+                <p>
+                    <img src="~/Images/bulb.jpg" style="height: 80px; width: 80px; border-radius: 50%;">
+                </p>
+                Managify is an extremely simple yet very effective event management system. Here, one can create an event, manage it
+                or delete it with ease. Then these events can be registered by the fellow candidates. Candidates can also view the
+                number of events they have registered.<br>
+                @*<a href="@Url.Action("Login", "Home")">Get Started</a>*@
+            </div>
+            <div class="utility-info">
+                <ul class="utility-list">
+                    <li><span class="licon icon-com"></span><a href="#">@DateTime.Now</a></li>
+                </ul>
+            </div>
+            <div class="gradient-overlay"></div>
+            <div class="color-overlay"></div>
+        </div><!-- /.blog-card -->
+    </div>
+    <div class="col-md-5">
+        <div class="card" style="border-radius: 5px; box-shadow: 5px 10px 14px 0 rgb(128, 128, 128); margin-bottom: 30px;">
+            <div class="card-header bg-danger text-white">
+                <h5>Register Now!</h5>
+            </div>
+            <div class="card-body">
+                <p>
+                    <span>
+                        Hurry up otherwise you will miss the opporunity of being the part of the spectacular journey of being the
+                        part of Managify.
+                    </span>
+                </p>
+                <a href="@Url.Action("Register", "Account")" class="btn btn-outline-danger btn-sm">Register</a>
+            </div>
+        </div>
+        <div class="card" style="border-radius: 5px; box-shadow: 5px 10px 14px 0 rgb(128, 128, 128);">
+            <div class="card-header bg-danger text-white">
+                <h5>Benefits</h5>
+            </div>
+            <div class="card-body">
+                <ul>
+                    <li>Simplification in Planning</li>
+                    <li>Helps in the Event Growth</li>
+                    <li>Easy to Manage</li>
+                </ul>
+                <p class="card-text"><small class="text-muted">Conditions Apply</small></p>
+            </div>
+        </div>
+
+    </div>
+    @*
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Getting started</h2>
+                <p>
+                    ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                    enables a clean separation of concerns and gives you full control over markup
+                    for enjoyable, agile development.
+                </p>
+                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Get more libraries</h2>
+                <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>Web Hosting</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </div>
+        </div>
+    *@

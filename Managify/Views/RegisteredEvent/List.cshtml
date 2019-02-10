@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Managify.Models.RegisteredEvent>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List of all the Registrations</h2>
+
+<p>
+    @Html.ActionLink("Go back", "Index")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Event.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.User.Id)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Event.Title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.User.Id)
+        </td>
+        <td>
+            @Html.ActionLink("Remove", "Remove", new { userId = item.UserAccountId, eventId = item.EventId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Managify.Models.Event>
+
+@{
+    ViewBag.Title = "Events";
+}
+
+<h2>Events</h2>
+<p>
+    @Html.ActionLink("Create New!", "Create")
+</p>
+<p>
+    @Html.ActionLink("Manage Events", "List")
+</p>
+
+<div style="color: #999999;
+  font-family: 'Roboto','Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
+  padding: 1rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;">
+    <ul class="cards">
+        
+        @foreach (var item in Model)
+        {
+            <li class="cards__item">
+                <div class="card" id="event">
+                    <img src=@item.ImagePath.ToString() class="card__image">
+                    <div class="card__content">
+                        <div class="card__title">@Html.DisplayFor(modelItem => item.Title)</div>
+                        <p class="card__text">@Html.DisplayFor(modelItem => item.Description) <br />
+                            <br/>
+                            Venue: @Html.DisplayFor(modelItem => item.Venue) <br>
+                            Date: @Html.DisplayFor(modelItem => item.Date) <br>
+                            Time: @Html.DisplayFor(modelItem => item.Time) <br>
+                            Fees: @Html.DisplayFor(modelItem => item.Fees)
+                        </p>
+                        <a class="btn btn-block btn-outline-danger" href="@Url.Action("Register", "Event", new { id = @item.Id})">Register</a>
+                    </div>
+                </div>
+            </li>
+        }
+
+    </ul>
+</div>
